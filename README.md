@@ -1,5 +1,5 @@
 # Network Traffic Analysis using tcpdump
-This project demonstrates how to capture and analyze network traffic using `tcpdump` on Kali Linux.
+This project demonstrates how to capture and analyze network traffic using `tcpdump and wireshark` on Kali Linux.
 ### Network Traffic Analysis Report
 
 **Capture File**: `traffic_capture.pcap`  
@@ -42,12 +42,61 @@ This project demonstrates how to capture and analyze network traffic using `tcpd
 - Regularly review network configurations to ensure optimal performance and adherence to security best practices, especially in mixed IP environments.
 
 ## Project Structure
-- `captures/`: Contains network traffic captures in `.pcap` format.
-- `scripts/`: Bash scripts for automating traffic capture.
-- `docs/`: Documentation and analysis results.
+- `captures/`: Captures Directory
+
+This directory contains network traffic captures in `.pcap` format.
+
+## Files
+
+- **`traffic_capture.pcap`**: This file includes captured network traffic data taken from the network at a specific time. The capture contains various protocols, including ICMPv6, ARP, and UDP.
+
+## Analysis
+
+The traffic capture can be analyzed using tools like Wireshark or the provided scripts in the `scripts/` directory.
+- `scripts/`:  Scripts Directory
+
+This directory contains Bash scripts to automate network traffic capture and analysis.
+
+## Scripts
+
+- **`start_capture.sh`**: Starts capturing network traffic. You need to specify the output file name.
+- **`stop_capture.sh`**: Stops the ongoing traffic capture.
+- **`analyze_capture.sh`**: Analyzes a specified `.pcap` file and generates a report.
 
 ## Usage
-### Capture Network Traffic
-Use the `tcpdump` command or the provided scripts to capture traffic:
+
+Ensure that you have the necessary permissions to run these scripts. You may need to execute them with `sudo` depending on your system's configuration.
+
+Example usage:
 ```bash
-sudo bash scripts/capture_traffic.sh
+bash start_capture.sh output.pcap
+bash stop_capture.sh
+bash analyze_capture.sh output.pcap analysis_report.md
+- `docs/`: ### Scripts
+
+The `scripts/` directory contains the following scripts:
+- **`start_capture.sh`**: 
+  - Starts the network traffic capture using tcpdump.
+  - Usage: `bash start_capture.sh [output_file]`
+  
+- **`stop_capture.sh`**:
+  - Stops the ongoing traffic capture.
+  - Usage: `bash stop_capture.sh`
+
+- **`analyze_capture.sh`**:
+  - Analyzes the captured traffic and generates a report.
+  - Usage: `bash analyze_capture.sh [input_file] [output_report]`
+
+### Documentation
+
+The `docs/` directory contains the analysis report and related diagrams:
+- **`analysis_report.md`**: This report summarizes the analysis of the captured traffic, highlighting key findings and potential issues.
+- **`network_traffic_diagram.png`**: Visual representation of the traffic flows in the network, aiding in understanding the interactions between devices.
+
+## Requirements
+
+- **tcpdump**: For capturing network traffic.
+- **Wireshark/tshark**: For analyzing `.pcap` files.
+- **Bash**: For executing scripts.
+
+
