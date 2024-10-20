@@ -59,13 +59,13 @@ This directory contains Bash scripts to automate network traffic capture and ana
 
 ## Scripts
 
-- **`start_capture.sh`**: Starts capturing network traffic. You need to specify the output file name.
+- **`start_capture.sh`**: Starts capturing network traffic.
 - **`stop_capture.sh`**: Stops the ongoing traffic capture.
 - **`analyze_capture.sh`**: Analyzes a specified `.pcap` file and generates a report.
 
 ## Usage
 
-Ensure that you have the necessary permissions to run these scripts. You may need to execute them with `sudo` depending on your system's configuration.
+Ensure that i have the necessary permissions to run these scripts. i may need to execute them with `sudo` depending on your system's configuration.
 
 Example usage:
 ```bash
